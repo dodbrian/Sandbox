@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Sandbox\Sandbox.csproj", "{1A69AE95-D46F-4DFB-98DA-15A2FC772200}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueryFilters", "QueryFilters\QueryFilters.csproj", "{7F049426-0507-4A51-8335-BFEB3F950E0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.SQLite", "ConsoleApp.SQLite\ConsoleApp.SQLite.csproj", "{C45AFE5C-2185-4052-99E5-5FEF5AF20FF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTrees", "ExpressionTrees\ExpressionTrees.csproj", "{0E4A3A2B-EE3E-4E74-B0E3-D514361567A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositionOverInheritance", "CompositionOverInheritance\CompositionOverInheritance.csproj", "{14022186-AD51-4107-A2E3-D1A32C5DA255}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A69AE95-D46F-4DFB-98DA-15A2FC772200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A69AE95-D46F-4DFB-98DA-15A2FC772200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A69AE95-D46F-4DFB-98DA-15A2FC772200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A69AE95-D46F-4DFB-98DA-15A2FC772200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F049426-0507-4A51-8335-BFEB3F950E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F049426-0507-4A51-8335-BFEB3F950E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F049426-0507-4A51-8335-BFEB3F950E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F049426-0507-4A51-8335-BFEB3F950E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C45AFE5C-2185-4052-99E5-5FEF5AF20FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C45AFE5C-2185-4052-99E5-5FEF5AF20FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C45AFE5C-2185-4052-99E5-5FEF5AF20FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C45AFE5C-2185-4052-99E5-5FEF5AF20FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E4A3A2B-EE3E-4E74-B0E3-D514361567A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4A3A2B-EE3E-4E74-B0E3-D514361567A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4A3A2B-EE3E-4E74-B0E3-D514361567A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4A3A2B-EE3E-4E74-B0E3-D514361567A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14022186-AD51-4107-A2E3-D1A32C5DA255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14022186-AD51-4107-A2E3-D1A32C5DA255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14022186-AD51-4107-A2E3-D1A32C5DA255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14022186-AD51-4107-A2E3-D1A32C5DA255}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17A74A17-5A71-4736-B2CD-B00F5231ABF2}
+	EndGlobalSection
+EndGlobal
