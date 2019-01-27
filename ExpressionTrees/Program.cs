@@ -8,6 +8,13 @@ namespace ExpressionTrees
     {
         static void Main(string[] args)
         {
+            var absMethod = Utils.InfoOf(() => Math.Abs(default(double)));
+            var nowProperty = Utils.InfoOf(() => DateTime.Now);
+            var guidConstructor = Utils.InfoOf(() => new Guid(default(byte[])));
+        }
+
+        private static void CustomQueryProvider()
+        {
             var table = new Source<int>("numbers");
 
             var result = from x in table
