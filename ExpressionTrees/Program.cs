@@ -4,9 +4,9 @@ using System.Linq.Expressions;
 
 namespace ExpressionTrees
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var absMethod = Utils.InfoOf(() => Math.Abs(default(double)));
             var nowProperty = Utils.InfoOf(() => DateTime.Now);
@@ -18,13 +18,10 @@ namespace ExpressionTrees
             var table = new Source<int>("numbers");
 
             var result = from x in table
-                         where x > 0
-                         select x * x;
+                where x > 0
+                select x * x;
 
-            foreach (var x in result)
-            {
-                Console.WriteLine(x);
-            }
+            foreach (var x in result) Console.WriteLine(x);
         }
 
         private static void FuncVsExpression()

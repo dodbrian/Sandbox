@@ -1,11 +1,10 @@
-﻿using System;
-using CompositionOverInheritance.Gaming;
+﻿using CompositionOverInheritance.Gaming;
 
 namespace CompositionOverInheritance
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var player = new Player();
             player.Update();

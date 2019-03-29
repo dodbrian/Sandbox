@@ -1,6 +1,6 @@
 namespace CompositionOverInheritance.Interfaces
 {
-    interface IVisible
+    internal interface IVisible
     {
         void Draw();
     }

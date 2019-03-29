@@ -6,18 +6,16 @@ using System.Linq.Expressions;
 
 namespace ExpressionTrees
 {
-    class Query<T> : IQueryable<T>
+    internal class Query<T> : IQueryable<T>
     {
-        private readonly Expression _expression;
-
         public Query(Expression expression)
         {
-            _expression = expression;
+            Expression = expression;
         }
 
         public Type ElementType => throw new NotImplementedException();
 
-        public Expression Expression => _expression;
+        public Expression Expression { get; }
 
         public IQueryProvider Provider => new Provider();
 

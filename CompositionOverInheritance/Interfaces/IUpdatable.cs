@@ -1,6 +1,6 @@
 namespace CompositionOverInheritance.Interfaces
 {
-    interface IUpdatable
+    internal interface IUpdatable
     {
         void Update();
     }

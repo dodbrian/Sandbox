@@ -1,10 +1,11 @@
-using CompositionOverInheritance.Interfaces;
 using CompositionOverInheritance.Qualities;
 
 namespace CompositionOverInheritance.Gaming
 {
-    class Trap : GameObject
+    internal class Trap : GameObject
     {
-        public Trap() : base(new Invisible(), new NotMovable(), new Solid()) { }
+        public Trap() : base(new Invisible(), new NotMovable(), new Solid())
+        {
+        }
     }
 }

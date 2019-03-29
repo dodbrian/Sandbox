@@ -1,10 +1,11 @@
-using CompositionOverInheritance.Interfaces;
 using CompositionOverInheritance.Qualities;
 
 namespace CompositionOverInheritance.Gaming
 {
-    class Player : GameObject
+    internal class Player : GameObject
     {
-        public Player() : base(new Visible(), new Movable(), new Solid()) { }
+        public Player() : base(new Visible(), new Movable(), new Solid())
+        {
+        }
     }
 }

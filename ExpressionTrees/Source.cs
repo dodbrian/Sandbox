@@ -6,21 +6,14 @@ using System.Linq.Expressions;
 
 namespace ExpressionTrees
 {
-    class Source<T> : IQueryable<T>
+    internal class Source<T> : IQueryable<T>
     {
-        private readonly string _tableName;
-
         public Source(string tableName)
         {
-            _tableName = tableName;
+            TableName = tableName;
         }
 
-        public string TableName
-        {
-            get { return _tableName; }
-        }
-
-        public override string ToString() => TableName;
+        public string TableName { get; }
 
         public Expression Expression => Expression.Constant(this);
 
@@ -36,6 +29,11 @@ namespace ExpressionTrees
         IEnumerator IEnumerable.GetEnumerator()
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return TableName;
         }
     }
 }

@@ -8,24 +8,23 @@ namespace ConsoleApp.SQLite.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Blogs",
-                columns: table => new
+                "Blogs",
+                table => new
                 {
                     BlogId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Url = table.Column<string>(nullable: true),
                     NormalGuid = table.Column<Guid>(nullable: false),
-                    NullableGuid = table.Column<Guid>(nullable: true, defaultValue: new Guid("09a2630b-f7eb-4985-ab39-8a8ae104aebe")),
-                    TenantId = table.Column<Guid>(nullable: true, defaultValue: new Guid("09a2630b-f7eb-4985-ab39-8a8ae104aebe"))
+                    NullableGuid = table.Column<Guid>(nullable: true,
+                        defaultValue: new Guid("09a2630b-f7eb-4985-ab39-8a8ae104aebe")),
+                    TenantId = table.Column<Guid>(nullable: true,
+                        defaultValue: new Guid("09a2630b-f7eb-4985-ab39-8a8ae104aebe"))
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Blogs", x => x.BlogId);
-                });
+                constraints: table => { table.PrimaryKey("PK_Blogs", x => x.BlogId); });
 
             migrationBuilder.CreateTable(
-                name: "Posts",
-                columns: table => new
+                "Posts",
+                table => new
                 {
                     PostId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
@@ -37,26 +36,26 @@ namespace ConsoleApp.SQLite.Migrations
                 {
                     table.PrimaryKey("PK_Posts", x => x.PostId);
                     table.ForeignKey(
-                        name: "FK_Posts_Blogs_BlogId",
-                        column: x => x.BlogId,
-                        principalTable: "Blogs",
-                        principalColumn: "BlogId",
+                        "FK_Posts_Blogs_BlogId",
+                        x => x.BlogId,
+                        "Blogs",
+                        "BlogId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Posts_BlogId",
-                table: "Posts",
-                column: "BlogId");
+                "IX_Posts_BlogId",
+                "Posts",
+                "BlogId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Posts");
+                "Posts");
 
             migrationBuilder.DropTable(
-                name: "Blogs");
+                "Blogs");
         }
     }
 }

@@ -4,7 +4,9 @@ namespace Sandbox
 {
     public class SandboxContext : DbContext
     {
-        public SandboxContext() : base(new DbContextOptions<SandboxContext>()) { }
+        public SandboxContext() : base(new DbContextOptions<SandboxContext>())
+        {
+        }
 
         public DbSet<Parent> Parents { get; set; }
         public DbSet<Item> Items { get; set; }

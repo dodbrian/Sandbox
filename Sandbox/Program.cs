@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using AutoMapper;
 using System.Linq;
+using AutoMapper;
 
 namespace Sandbox
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             using (var ctx = new SandboxContext())
             {
@@ -18,7 +18,7 @@ namespace Sandbox
                 var items = ctx.Items.Select(ItemProjection.Projection).ToList();
 
                 var testFrom = from x in ctx.Parents
-                               select x;
+                    select x;
             }
         }
 
@@ -26,7 +26,7 @@ namespace Sandbox
         {
             var dict = new Dictionary<Guid, SomeEntity>
             {
-                { Guid.NewGuid(), new SomeEntity{ Name = "TestName" } }
+                {Guid.NewGuid(), new SomeEntity {Name = "TestName"}}
             };
 
             var mapper = new MapperConfiguration(cfg =>
@@ -48,9 +48,9 @@ namespace Sandbox
                     ChildName = "Test Name",
                     Items = new List<Item>
                     {
-                        new Item { Name = "Item1" },
-                        new Item { Name = "Item2" },
-                        new Item { Name = "Item3" }
+                        new Item {Name = "Item1"},
+                        new Item {Name = "Item2"},
+                        new Item {Name = "Item3"}
                     }
                 };
 

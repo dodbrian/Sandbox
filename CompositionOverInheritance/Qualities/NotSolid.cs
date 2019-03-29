@@ -3,7 +3,7 @@ using CompositionOverInheritance.Interfaces;
 
 namespace CompositionOverInheritance.Qualities
 {
-    class NotSolid : ICollidable
+    internal class NotSolid : ICollidable
     {
         public void Collide()
         {

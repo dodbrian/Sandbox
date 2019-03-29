@@ -3,7 +3,7 @@ using CompositionOverInheritance.Interfaces;
 
 namespace CompositionOverInheritance.Qualities
 {
-    class NotMovable : IUpdatable
+    internal class NotMovable : IUpdatable
     {
         public void Update()
         {

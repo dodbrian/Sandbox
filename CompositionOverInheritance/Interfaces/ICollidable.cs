@@ -1,6 +1,6 @@
 namespace CompositionOverInheritance.Interfaces
 {
-    interface ICollidable
+    internal interface ICollidable
     {
         void Collide();
     }

@@ -2,7 +2,7 @@ using System;
 
 namespace CompositionOverInheritance.Entitites
 {
-    interface ITrackable
+    internal interface ITrackable
     {
         DateTime CreatedOn { get; set; }
 

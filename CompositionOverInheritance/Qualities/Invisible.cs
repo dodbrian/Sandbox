@@ -3,7 +3,7 @@ using CompositionOverInheritance.Interfaces;
 
 namespace CompositionOverInheritance.Qualities
 {
-    class Invisible : IVisible
+    internal class Invisible : IVisible
     {
         public void Draw()
         {

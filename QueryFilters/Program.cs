@@ -26,18 +26,18 @@ namespace Samples
                         $"{blog.Url.PadRight(33)} [Tenant: {db.Entry(blog).Property("TenantId").CurrentValue}]");
 
                     foreach (var post in blog.Posts)
-                    {
                         Console.WriteLine($" - {post.Title.PadRight(30)} [IsDeleted: {post.IsDeleted}]");
-                    }
 
                     Console.WriteLine();
                 }
 
                 #region IgnoreFilters
+
                 blogs = db.Blogs
                     .Include(b => b.Posts)
                     .IgnoreQueryFilters()
                     .ToList();
+
                 #endregion
 
                 foreach (var blog in blogs)
@@ -46,9 +46,7 @@ namespace Samples
                         $"{blog.Url.PadRight(33)} [Tenant: {db.Entry(blog).Property("TenantId").CurrentValue}]");
 
                     foreach (var post in blog.Posts)
-                    {
                         Console.WriteLine($" - {post.Title.PadRight(30)} [IsDeleted: {post.IsDeleted}]");
-                    }
 
                     Console.WriteLine();
                 }
@@ -67,9 +65,9 @@ namespace Samples
                             Url = "http://sample.com/blogs/fish",
                             Posts = new List<Post>
                             {
-                                new Post { Title = "Fish care 101" },
-                                new Post { Title = "Caring for tropical fish" },
-                                new Post { Title = "Types of ornamental fish" }
+                                new Post {Title = "Fish care 101"},
+                                new Post {Title = "Caring for tropical fish"},
+                                new Post {Title = "Types of ornamental fish"}
                             }
                         });
 
@@ -79,9 +77,9 @@ namespace Samples
                             Url = "http://sample.com/blogs/cats",
                             Posts = new List<Post>
                             {
-                                new Post { Title = "Cat care 101" },
-                                new Post { Title = "Caring for tropical cats" },
-                                new Post { Title = "Types of ornamental cats" }
+                                new Post {Title = "Cat care 101"},
+                                new Post {Title = "Caring for tropical cats"},
+                                new Post {Title = "Types of ornamental cats"}
                             }
                         });
 
@@ -95,8 +93,8 @@ namespace Samples
                                 Url = "http://sample.com/blogs/catfish",
                                 Posts = new List<Post>
                                 {
-                                    new Post { Title = "Catfish care 101" },
-                                    new Post { Title = "History of the catfish name" }
+                                    new Post {Title = "Catfish care 101"},
+                                    new Post {Title = "History of the catfish name"}
                                 }
                             });
 
@@ -140,6 +138,7 @@ namespace Samples
         }
 
         #region Configuration
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Blog>().Property<string>("TenantId").HasField("_tenantId");
@@ -148,6 +147,7 @@ namespace Samples
             modelBuilder.Entity<Blog>().HasQueryFilter(b => EF.Property<string>(b, "TenantId") == _tenantId);
             modelBuilder.Entity<Post>().HasQueryFilter(p => !p.IsDeleted);
         }
+
         #endregion
 
         public override int SaveChanges()
@@ -157,9 +157,7 @@ namespace Samples
             foreach (var item in ChangeTracker.Entries().Where(
                 e =>
                     e.State == EntityState.Added && e.Metadata.GetProperties().Any(p => p.Name == "TenantId")))
-            {
                 item.CurrentValues["TenantId"] = _tenantId;
-            }
 
             foreach (var item in ChangeTracker.Entries<Post>().Where(e => e.State == EntityState.Deleted))
             {
@@ -172,6 +170,7 @@ namespace Samples
     }
 
     #region Entities
+
     public class Blog
     {
         private string _tenantId;
@@ -193,5 +192,6 @@ namespace Samples
         public int BlogId { get; set; }
         public Blog Blog { get; set; }
     }
+
     #endregion
 }
