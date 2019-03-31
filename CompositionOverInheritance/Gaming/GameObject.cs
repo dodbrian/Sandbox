@@ -8,7 +8,7 @@ namespace CompositionOverInheritance.Gaming
         private readonly IUpdatable _updatable;
         private readonly IVisible _visible;
 
-        public GameObject(IVisible visible, IUpdatable updatable, ICollidable collidable)
+        protected GameObject(IVisible visible, IUpdatable updatable, ICollidable collidable)
         {
             _visible = visible;
             _updatable = updatable;

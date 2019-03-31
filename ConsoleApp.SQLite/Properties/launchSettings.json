@@ -1,8 +1,7 @@
 {
   "profiles": {
     "ConsoleApp.SQLite": {
-      "commandName": "Project",
-      "workingDirectory": "C:\\Users\\dzimin\\source\\repos\\Sandbox\\ConsoleApp.SQLite"
+      "commandName": "Project"
     }
   }
 }
