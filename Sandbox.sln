@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Sandbox\Sandbox.csproj", "{1A69AE95-D46F-4DFB-98DA-15A2FC772200}"
 EndProject
@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueryFilters", "QueryFilter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.SQLite", "ConsoleApp.SQLite\ConsoleApp.SQLite.csproj", "{C45AFE5C-2185-4052-99E5-5FEF5AF20FF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTrees", "ExpressionTrees\ExpressionTrees.csproj", "{0E4A3A2B-EE3E-4E74-B0E3-D514361567A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpressionTrees", "ExpressionTrees\ExpressionTrees.csproj", "{0E4A3A2B-EE3E-4E74-B0E3-D514361567A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositionOverInheritance", "CompositionOverInheritance\CompositionOverInheritance.csproj", "{14022186-AD51-4107-A2E3-D1A32C5DA255}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompositionOverInheritance", "CompositionOverInheritance\CompositionOverInheritance.csproj", "{14022186-AD51-4107-A2E3-D1A32C5DA255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransitTest", "MassTransitTest\MassTransitTest.csproj", "{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{14022186-AD51-4107-A2E3-D1A32C5DA255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14022186-AD51-4107-A2E3-D1A32C5DA255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14022186-AD51-4107-A2E3-D1A32C5DA255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
