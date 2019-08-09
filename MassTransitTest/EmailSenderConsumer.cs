@@ -9,7 +9,7 @@ namespace MassTransitTest
         public async Task Consume(ConsumeContext<ISendEmail> context)
         {
             await Console.Out.WriteLineAsync(
-                $"Sending email to {context.Message.Recipient} at {context.Message.Email}");
+                $"EmailSenderConsumer: Sending email to {context.Message.Recipient} at {context.Message.Email}");
 
             await context.Publish<IEmailSent>(new
             {
