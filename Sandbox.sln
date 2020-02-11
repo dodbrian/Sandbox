@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.452
+VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Sandbox\Sandbox.csproj", "{1A69AE95-D46F-4DFB-98DA-15A2FC772200}"
 EndProject
@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpressionTrees", "Expressi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompositionOverInheritance", "CompositionOverInheritance\CompositionOverInheritance.csproj", "{14022186-AD51-4107-A2E3-D1A32C5DA255}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransitTest", "MassTransitTest\MassTransitTest.csproj", "{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransitTest", "MassTransitTest\MassTransitTest.csproj", "{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreProjectionTest", "EFCoreProjectionTest\EFCoreProjectionTest.csproj", "{475FFCFC-B092-426C-906A-98CF5BAAC2B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransitTesting", "MassTransitTesting\MassTransitTesting.csproj", "{4C4FA7A1-4DA1-4D3D-84E3-756AC248767F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B2C3A53-9AFA-40C0-B712-352C9E0B2E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{475FFCFC-B092-426C-906A-98CF5BAAC2B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475FFCFC-B092-426C-906A-98CF5BAAC2B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475FFCFC-B092-426C-906A-98CF5BAAC2B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475FFCFC-B092-426C-906A-98CF5BAAC2B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C4FA7A1-4DA1-4D3D-84E3-756AC248767F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C4FA7A1-4DA1-4D3D-84E3-756AC248767F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C4FA7A1-4DA1-4D3D-84E3-756AC248767F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C4FA7A1-4DA1-4D3D-84E3-756AC248767F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
