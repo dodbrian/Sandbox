@@ -1,13 +1,14 @@
-﻿using MassTransit;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using MassTransit;
+using Sandbox.Common;
 
 namespace MassTransitTest
 {
     public static class Program
     {
-        public static async Task Main(string[] args)
+        public static async Task Main()
         {
             var bus = Bus.Factory.CreateUsingRabbitMq(sbc =>
             {
@@ -29,6 +30,13 @@ namespace MassTransitTest
                         await Console.Out.WriteLineAsync($"Handler 2: Confirmation received: {context.Message.ReceivedText}, " +
                                                          $"address: {context.ReceiveContext.InputAddress}");
                     });
+
+                    ep.Consumer<FailingConsumer>();
+                });
+
+                sbc.ReceiveEndpoint(host, "test_queue_error", ep =>
+                {
+                    ep.Consumer<ErrorQueueConsumer>();
                 });
 
                 sbc.ReceiveEndpoint(host, "second_test_queue", ep =>
@@ -69,6 +77,9 @@ namespace MassTransitTest
 
             var emailSenderEndpoint = await bus.GetSendEndpoint(new Uri("rabbitmq://localhost/email_sender_queue"));
             await emailSenderEndpoint.Send<ISendEmail>(new { Email = "some@test.de", Recipient = "Good Boy" });
+
+            await ColoredConsole.WriteLineAsync("Sending failing message...", ConsoleColor.Cyan);
+            await bus.Publish<IFailingMessage>(new { Id = Guid.NewGuid() });
 
             //Console.WriteLine("Press any key to exit");
             //Console.ReadLine();

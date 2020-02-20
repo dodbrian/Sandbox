@@ -1,6 +1,7 @@
-﻿using MassTransit;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using MassTransit;
+using Sandbox.Common;
 
 namespace MassTransitTest
 {
@@ -8,8 +9,9 @@ namespace MassTransitTest
     {
         public async Task Consume(ConsumeContext<ISendEmail> context)
         {
-            await Console.Out.WriteLineAsync(
-                $"EmailSenderConsumer: Sending email to {context.Message.Recipient} at {context.Message.Email}");
+            await ColoredConsole.WriteLineAsync(
+                $"EmailSenderConsumer: Sending email to {context.Message.Recipient} at {context.Message.Email}",
+                ConsoleColor.Yellow);
 
             await context.Publish<IEmailSent>(new
             {
