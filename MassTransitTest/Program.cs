@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using GreenPipes;
 using MassTransit;
 using Sandbox.Common;
 
@@ -20,6 +21,8 @@ namespace MassTransitTest
 
                 sbc.ReceiveEndpoint(host, "test_queue", ep =>
                 {
+                    ep.UseMessageRetry(cfg => cfg.Immediate(5));
+
                     ep.Handler<YourMessage>(async context =>
                     {
                         await Console.Out.WriteLineAsync($"Handler 1: Received: {context.Message.Text}, address: {context.ReceiveContext.InputAddress}");
