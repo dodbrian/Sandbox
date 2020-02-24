@@ -39,6 +39,7 @@ namespace MassTransitTest
 
                 sbc.ReceiveEndpoint(host, "test_queue_error", ep =>
                 {
+                    ep.BindMessageExchanges = false;
                     ep.Consumer<ErrorQueueConsumer>();
                 });
 
