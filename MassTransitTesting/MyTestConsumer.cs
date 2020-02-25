@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using MassTransit;
-using MassTransitTest;
 
 namespace MassTransitTesting
 {

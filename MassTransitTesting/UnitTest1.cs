@@ -1,8 +1,6 @@
 using System.Linq;
 using FluentAssertions;
-using MassTransit;
 using MassTransit.Testing;
-using MassTransitTest;
 using Xunit;
 
 namespace MassTransitTesting

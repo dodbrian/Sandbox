@@ -1,7 +1,7 @@
 ﻿using System;
 using MassTransit;
 
-namespace MassTransitTest
+namespace MassTransitTesting
 {
     public interface IMessage : CorrelatedBy<Guid>
     {
