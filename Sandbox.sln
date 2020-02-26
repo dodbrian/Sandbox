@@ -19,7 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreProjectionTest", "EFC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransitTesting", "MassTransitTesting\MassTransitTesting.csproj", "{4C4FA7A1-4DA1-4D3D-84E3-756AC248767F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Common", "Sandbox.Common\Sandbox.Common.csproj", "{FCDEA34E-5941-4DF8-8CDB-B74101488C5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Common", "Sandbox.Common\Sandbox.Common.csproj", "{FCDEA34E-5941-4DF8-8CDB-B74101488C5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F19FF13-8E5F-4908-B0C4-BB784C76E7DA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
