@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Common", "Sandbox.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F19FF13-8E5F-4908-B0C4-BB784C76E7DA}"
 	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
 		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreePersistence", "TreePersistence\TreePersistence.csproj", "{46D8D815-8EAB-40B2-94C8-B89B195AEE85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{FCDEA34E-5941-4DF8-8CDB-B74101488C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCDEA34E-5941-4DF8-8CDB-B74101488C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCDEA34E-5941-4DF8-8CDB-B74101488C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D8D815-8EAB-40B2-94C8-B89B195AEE85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D8D815-8EAB-40B2-94C8-B89B195AEE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D8D815-8EAB-40B2-94C8-B89B195AEE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D8D815-8EAB-40B2-94C8-B89B195AEE85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
