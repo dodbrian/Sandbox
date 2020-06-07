@@ -9,6 +9,16 @@ namespace Sandbox
     {
         private static void Main(string[] args)
         {
+            var enumeration = YieldReturnTest.GenerateTestSequence();
+
+            foreach (var item in enumeration)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void Projections()
+        {
             using (var ctx = new SandboxContext())
             {
                 ctx.Database.EnsureCreated();
@@ -18,7 +28,7 @@ namespace Sandbox
                 var items = ctx.Items.Select(ItemProjection.Projection).ToList();
 
                 var testFrom = from x in ctx.Parents
-                    select x;
+                               select x;
             }
         }
 
