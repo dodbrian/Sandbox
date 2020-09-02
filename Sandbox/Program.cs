@@ -9,6 +9,17 @@ namespace Sandbox
     {
         private static void Main(string[] args)
         {
+            var range = Enumerable.Range(1, 43);
+            var chunks = range.Chunk(6);
+
+            foreach (var chunk in chunks)
+            {
+                Console.WriteLine(string.Join(',', chunk));
+            }
+        }
+
+        private static void SimpleEnumeration()
+        {
             var enumeration = YieldReturnTest.GenerateTestSequence();
 
             foreach (var item in enumeration)
