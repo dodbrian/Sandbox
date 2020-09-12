@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using AutoMapper;
 
@@ -8,6 +9,35 @@ namespace Sandbox
     internal class Program
     {
         private static void Main(string[] args)
+        {
+            var futureDays = DateTimeEnumerable.FutureFrom(DateTime.Now);
+            var startDate = new DateTime(2020, 10, 1).Date;
+            var endDate = new DateTime(2020, 12, 31).Date;
+
+            long average = 0;
+            int daysCount = 0;
+
+            int runsCount = 1000;
+
+            for (int i = 0; i < runsCount; i++)
+            {
+                var watch = Stopwatch.StartNew();
+
+                daysCount = futureDays
+                    .WithLastOn(endDate)
+                    .Where(date => date >= startDate)
+                    .Count();
+
+                watch.Stop();
+
+                average += watch.ElapsedMilliseconds;
+            }
+
+            Console.WriteLine(daysCount);
+            Console.WriteLine($"{(decimal)average / runsCount} ms");
+        }
+
+        private static void EnumerateInChunks()
         {
             var range = Enumerable.Range(1, 43);
             var chunks = range.Chunk(6);
