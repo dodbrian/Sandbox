@@ -1,6 +1,6 @@
 using System;
 
-namespace CompositionOverInheritance.Entitites
+namespace CompositionOverInheritance.Entities
 {
     internal abstract class EntityBase
     {

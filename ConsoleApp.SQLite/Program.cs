@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp.SQLite
 {
-    internal class Program
+    internal static class Program
     {
         private static void Main(string[] args)
         {

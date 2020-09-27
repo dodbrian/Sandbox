@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TreePersistence
 {
-    class TreeContext : DbContext
+    internal class TreeContext : DbContext
     {
-        private readonly Guid RootNodeId = Guid.NewGuid();
-        private readonly Guid Level2NodeId = Guid.NewGuid();
+        private readonly Guid _rootNodeId = Guid.NewGuid();
+        private readonly Guid _level2NodeId = Guid.NewGuid();
 
         public DbSet<TreeNode> TreeNodes { get; set; }
 
@@ -27,25 +27,25 @@ namespace TreePersistence
                 .HasData(
                 new TreeNode
                 {
-                    Id = RootNodeId,
+                    Id = _rootNodeId,
                     Name = "Root node",
                 },
                 new TreeNode
                 {
-                    Id = Level2NodeId,
+                    Id = _level2NodeId,
                     Name = "Level 2 node 1",
-                    ParentId = RootNodeId,
+                    ParentId = _rootNodeId,
                 },
                 new TreeNode
                 {
                     Id = Guid.NewGuid(),
-                    ParentId = Level2NodeId,
+                    ParentId = _level2NodeId,
                     Name = "Level 3 node 1",
                 },
                 new TreeNode
                 {
                     Id = Guid.NewGuid(),
-                    ParentId = RootNodeId,
+                    ParentId = _rootNodeId,
                     Name = "Level 2 node 2",
                 });
         }

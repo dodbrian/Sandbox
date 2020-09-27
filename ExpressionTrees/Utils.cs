@@ -18,17 +18,13 @@ namespace ExpressionTrees
 
         private static MemberInfo InfoOfCore(LambdaExpression e)
         {
-            switch (e.Body.NodeType)
+            return e.Body.NodeType switch
             {
-                case ExpressionType.New:
-                    return ((NewExpression) e.Body).Constructor;
-                case ExpressionType.Call:
-                    return ((MethodCallExpression) e.Body).Method;
-                case ExpressionType.MemberAccess:
-                    return ((MemberExpression) e.Body).Member;
-                default:
-                    throw new NotSupportedException();
-            }
+                ExpressionType.New => ((NewExpression) e.Body).Constructor,
+                ExpressionType.Call => ((MethodCallExpression) e.Body).Method,
+                ExpressionType.MemberAccess => ((MemberExpression) e.Body).Member,
+                _ => throw new NotSupportedException()
+            };
         }
     }
 }

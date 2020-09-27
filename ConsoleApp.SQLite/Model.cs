@@ -8,8 +8,8 @@ namespace ConsoleApp.SQLite
     {
         private const string TenantColumn = "TenantId";
 
-        private readonly Guid DefaultGuid = new Guid("09a2630b-f7eb-4985-ab39-8a8ae104aebe");
-        private readonly Guid OtherGuid = new Guid("396ad64b-eb53-431a-93de-f9458131ba73");
+        private readonly Guid _defaultGuid = new Guid("09a2630b-f7eb-4985-ab39-8a8ae104aebe");
+        private readonly Guid _otherGuid = new Guid("396ad64b-eb53-431a-93de-f9458131ba73");
 
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
@@ -25,11 +25,11 @@ namespace ConsoleApp.SQLite
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Blog>()
-                .Property(blog => blog.NullableGuid).HasDefaultValue(DefaultGuid);
+                .Property(blog => blog.NullableGuid).HasDefaultValue(_defaultGuid);
 
             modelBuilder.Entity<Blog>()
                 //.HasQueryFilter(blog => EF.Property<Guid?>(blog, TenantColumn) == DefaultGuid)
-                .Property<Guid?>(TenantColumn).HasDefaultValue(DefaultGuid);
+                .Property<Guid?>(TenantColumn).HasDefaultValue(_defaultGuid);
 
             modelBuilder.Entity<Blog>()
                 .HasData(new

@@ -1,4 +1,4 @@
-namespace CompositionOverInheritance.Entitites
+namespace CompositionOverInheritance.Entities
 {
     internal abstract class NamedEntity : EntityBase
     {

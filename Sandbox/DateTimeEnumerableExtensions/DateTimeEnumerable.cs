@@ -15,11 +15,11 @@ namespace Sandbox.DateTimeEnumerableExtensions
         {
             lastDate = lastDate.Date;
 
-            bool inRange(DateTime current) => dates.Forward
+            bool InRange(DateTime current) => dates.Forward
                 ? current <= lastDate
                 : current >= lastDate;
 
-            return dates.TakeWhile(date => inRange(date));
+            return dates.TakeWhile(InRange);
         }
 
         public static IOrderedDateTimeEnumerable FutureFrom(DateTime start)
@@ -39,11 +39,11 @@ namespace Sandbox.DateTimeEnumerableExtensions
 
             var current = start;
 
-            bool inRange(DateTime current) => forward
+            bool InRange(DateTime current) => forward
                 ? start <= current && current < end
                 : end < current && current <= start;
 
-            while (inRange(current))
+            while (InRange(current))
             {
                 yield return current;
                 current = current.AddDays(forward ? 1 : -1);
