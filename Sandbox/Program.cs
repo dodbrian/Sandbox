@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
 using Sandbox.DateTimeEnumerableExtensions;
 
@@ -11,7 +12,18 @@ namespace Sandbox
     {
         private static void Main(string[] args)
         {
-            TestDateTimeEnumerable();
+            Task.Run(async () =>
+            {
+                try
+                {
+                    await CascadingAwait.Load();
+                    Console.WriteLine("Done!");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }).Wait();
         }
 
         private static void TestDateTimeEnumerable()
@@ -65,17 +77,14 @@ namespace Sandbox
 
         private static void Projections()
         {
-            using (var ctx = new SandboxContext())
-            {
-                ctx.Database.EnsureCreated();
+            using var ctx = new SandboxContext();
+            ctx.Database.EnsureCreated();
 
-                var parents = ctx.Parents.Select(ParentShort.Projection).ToList();
+            var parents = ctx.Parents.Select(ParentShort.Projection).ToList();
+            var items = ctx.Items.Select(ItemProjection.Projection).ToList();
 
-                var items = ctx.Items.Select(ItemProjection.Projection).ToList();
-
-                var testFrom = from x in ctx.Parents
-                               select x;
-            }
+            var testFrom = from x in ctx.Parents
+                select x;
         }
 
         private static void DictionaryMappingTest()
@@ -95,37 +104,35 @@ namespace Sandbox
 
         private static void ContextTest()
         {
-            using (var ctx = new SandboxContext())
+            using var ctx = new SandboxContext();
+            ctx.Database.EnsureCreated();
+
+            var parent = new Parent
             {
-                ctx.Database.EnsureCreated();
-
-                var parent = new Parent
+                ChildName = "Test Name",
+                Items = new List<Item>
                 {
-                    ChildName = "Test Name",
-                    Items = new List<Item>
-                    {
-                        new Item {Name = "Item1"},
-                        new Item {Name = "Item2"},
-                        new Item {Name = "Item3"}
-                    }
-                };
+                    new Item {Name = "Item1"},
+                    new Item {Name = "Item2"},
+                    new Item {Name = "Item3"}
+                }
+            };
 
-                ctx.Parents.Add(parent);
-                ctx.SaveChanges();
+            ctx.Parents.Add(parent);
+            ctx.SaveChanges();
 
-                Console.WriteLine("Press any key to delete dependants...");
-                Console.ReadLine();
+            Console.WriteLine("Press any key to delete dependants...");
+            Console.ReadLine();
 
-                var firstItem = parent.Items.First();
-                parent.Items.Remove(firstItem);
-                ctx.SaveChanges();
+            var firstItem = parent.Items.First();
+            parent.Items.Remove(firstItem);
+            ctx.SaveChanges();
 
-                Console.WriteLine("Press any key to delete principal...");
-                Console.ReadLine();
+            Console.WriteLine("Press any key to delete principal...");
+            Console.ReadLine();
 
-                ctx.Parents.Remove(parent);
-                ctx.SaveChanges();
-            }
+            ctx.Parents.Remove(parent);
+            ctx.SaveChanges();
         }
 
         private static void AutomapperTest()
