@@ -16,18 +16,17 @@ namespace Sandbox
             var endDate = new DateTime(2020, 12, 31).Date;
 
             long average = 0;
-            int daysCount = 0;
+            var daysCount = 0;
 
-            int runsCount = 1000;
+            const int runsCount = 1000;
 
-            for (int i = 0; i < runsCount; i++)
+            for (var i = 0; i < runsCount; i++)
             {
                 var watch = Stopwatch.StartNew();
 
                 daysCount = futureDays
                     .WithLastOn(endDate)
-                    .Where(date => date >= startDate)
-                    .Count();
+                    .Count(date => date >= startDate);
 
                 watch.Stop();
 
