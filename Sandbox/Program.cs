@@ -11,6 +11,11 @@ namespace Sandbox
     {
         private static void Main(string[] args)
         {
+            TestDateTimeEnumerable();
+        }
+
+        private static void TestDateTimeEnumerable()
+        {
             var futureDays = DateTimeEnumerable.FutureFrom(DateTime.Now);
             var startDate = new DateTime(2020, 10, 1).Date;
             var endDate = new DateTime(2020, 12, 31).Date;
@@ -34,7 +39,7 @@ namespace Sandbox
             }
 
             Console.WriteLine(daysCount);
-            Console.WriteLine($"{(decimal)average / runsCount} ms");
+            Console.WriteLine($"{(decimal) average / runsCount} ms");
         }
 
         private static void EnumerateInChunks()
