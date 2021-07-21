@@ -12,6 +12,11 @@ namespace Sandbox
     {
         private static void Main(string[] args)
         {
+            SpecialFolders.Display();
+        }
+
+        private static void TestCascadingAwait()
+        {
             Task.Run(async () =>
             {
                 try
@@ -51,7 +56,7 @@ namespace Sandbox
             }
 
             Console.WriteLine(daysCount);
-            Console.WriteLine($"{(decimal) average / runsCount} ms");
+            Console.WriteLine($"{(decimal)average / runsCount} ms");
         }
 
         private static void EnumerateInChunks()
@@ -91,7 +96,7 @@ namespace Sandbox
         {
             var dict = new Dictionary<Guid, SomeEntity>
             {
-                {Guid.NewGuid(), new SomeEntity {Name = "TestName"}}
+                { Guid.NewGuid(), new SomeEntity { Name = "TestName" } }
             };
 
             var mapper = new MapperConfiguration(cfg =>
@@ -112,9 +117,9 @@ namespace Sandbox
                 ChildName = "Test Name",
                 Items = new List<Item>
                 {
-                    new Item {Name = "Item1"},
-                    new Item {Name = "Item2"},
-                    new Item {Name = "Item3"}
+                    new Item { Name = "Item1" },
+                    new Item { Name = "Item2" },
+                    new Item { Name = "Item3" }
                 }
             };
 
