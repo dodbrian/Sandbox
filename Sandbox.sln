@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreePersistence", "TreePers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetTime", "InternetTime\InternetTime.csproj", "{5DD10BF7-4843-4053-90A8-3F46C587E5CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSProject", "MSProject\MSProject.csproj", "{0BB1B389-4640-4925-8526-60F031D8F744}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{5DD10BF7-4843-4053-90A8-3F46C587E5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DD10BF7-4843-4053-90A8-3F46C587E5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DD10BF7-4843-4053-90A8-3F46C587E5CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB1B389-4640-4925-8526-60F031D8F744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB1B389-4640-4925-8526-60F031D8F744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB1B389-4640-4925-8526-60F031D8F744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB1B389-4640-4925-8526-60F031D8F744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
