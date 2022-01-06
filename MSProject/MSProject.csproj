@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Aspose.Tasks" Version="21.9.0" />
+      <ProjectReference Include="..\MsProjectMapper\MsProjectMapper.csproj" />
     </ItemGroup>
 
 </Project>

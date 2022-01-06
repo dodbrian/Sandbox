@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetTime", "InternetTim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSProject", "MSProject\MSProject.csproj", "{0BB1B389-4640-4925-8526-60F031D8F744}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsProjectMapper", "MsProjectMapper\MsProjectMapper.csproj", "{1514B277-EB6F-438A-9639-CA535CEC6F6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{0BB1B389-4640-4925-8526-60F031D8F744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BB1B389-4640-4925-8526-60F031D8F744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BB1B389-4640-4925-8526-60F031D8F744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1514B277-EB6F-438A-9639-CA535CEC6F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1514B277-EB6F-438A-9639-CA535CEC6F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1514B277-EB6F-438A-9639-CA535CEC6F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1514B277-EB6F-438A-9639-CA535CEC6F6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
