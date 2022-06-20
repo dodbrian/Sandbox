@@ -65,9 +65,9 @@ namespace Samples
                             Url = "http://sample.com/blogs/fish",
                             Posts = new List<Post>
                             {
-                                new Post {Title = "Fish care 101"},
-                                new Post {Title = "Caring for tropical fish"},
-                                new Post {Title = "Types of ornamental fish"}
+                                new Post { Title = "Fish care 101" },
+                                new Post { Title = "Caring for tropical fish" },
+                                new Post { Title = "Types of ornamental fish" }
                             }
                         });
 
@@ -77,9 +77,9 @@ namespace Samples
                             Url = "http://sample.com/blogs/cats",
                             Posts = new List<Post>
                             {
-                                new Post {Title = "Cat care 101"},
-                                new Post {Title = "Caring for tropical cats"},
-                                new Post {Title = "Types of ornamental cats"}
+                                new Post { Title = "Cat care 101" },
+                                new Post { Title = "Caring for tropical cats" },
+                                new Post { Title = "Types of ornamental cats" }
                             }
                         });
 
@@ -93,8 +93,8 @@ namespace Samples
                                 Url = "http://sample.com/blogs/catfish",
                                 Posts = new List<Post>
                                 {
-                                    new Post {Title = "Catfish care 101"},
-                                    new Post {Title = "History of the catfish name"}
+                                    new Post { Title = "Catfish care 101" },
+                                    new Post { Title = "History of the catfish name" }
                                 }
                             });
 
@@ -117,7 +117,8 @@ namespace Samples
     public class BloggingContext : DbContext
     {
         private static readonly ILoggerFactory _loggerFactory
-            = new LoggerFactory().AddConsole((s, l) => l == LogLevel.Information && !s.EndsWith("Connection"));
+            = LoggerFactory.Create(builder => builder.AddConsole());
+        // new LoggerFactory().AddConsole((s, l) => l == LogLevel.Information && !s.EndsWith("Connection"));
 
         private readonly string _tenantId;
 
@@ -154,9 +155,11 @@ namespace Samples
         {
             ChangeTracker.DetectChanges();
 
-            foreach (var item in ChangeTracker.Entries().Where(
-                e =>
-                    e.State == EntityState.Added && e.Metadata.GetProperties().Any(p => p.Name == "TenantId")))
+            foreach (var item in ChangeTracker.Entries()
+                         .Where(
+                             e =>
+                                 e.State == EntityState.Added &&
+                                 e.Metadata.GetProperties().Any(p => p.Name == "TenantId")))
                 item.CurrentValues["TenantId"] = _tenantId;
 
             foreach (var item in ChangeTracker.Entries<Post>().Where(e => e.State == EntityState.Deleted))
