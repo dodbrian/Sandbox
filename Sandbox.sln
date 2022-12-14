@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OopDesignSnippets", "OopDes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputFromTest", "OutputFromTest\OutputFromTest.csproj", "{DAB80E89-096F-464A-8F67-79D196CF1EBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFNullProjection", "EFNullProjection\EFNullProjection.csproj", "{84BF4A35-1A5A-4792-9F90-0E1E824BB885}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{DAB80E89-096F-464A-8F67-79D196CF1EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAB80E89-096F-464A-8F67-79D196CF1EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAB80E89-096F-464A-8F67-79D196CF1EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BF4A35-1A5A-4792-9F90-0E1E824BB885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BF4A35-1A5A-4792-9F90-0E1E824BB885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BF4A35-1A5A-4792-9F90-0E1E824BB885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BF4A35-1A5A-4792-9F90-0E1E824BB885}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
