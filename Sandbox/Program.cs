@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Sandbox.DateTimeEnumerableExtensions;
+using Sandbox.PolicyParsingEngine;
 
 namespace Sandbox
 {
@@ -12,7 +13,7 @@ namespace Sandbox
     {
         private static void Main(string[] args)
         {
-            SpecialFolders.Display();
+            TestPolicyParsing.Run();
         }
 
         private static void TestCascadingAwait()
