@@ -9,7 +9,7 @@ namespace CustomAuth.Controllers;
 [ApiController]
 public class AccountController : ControllerBase
 {
-    [HttpGet]
+    [HttpGet("sign-in")]
     public async Task SignIn()
     {
         var claimsPrincipal = new ClaimsPrincipal();
@@ -21,5 +21,11 @@ public class AccountController : ControllerBase
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         claimsPrincipal.AddIdentity(identity);
         await HttpContext.SignInAsync(claimsPrincipal);
+    }
+
+    [HttpGet("log-off")]
+    public async Task LogOff()
+    {
+        await HttpContext.SignOutAsync();
     }
 }
