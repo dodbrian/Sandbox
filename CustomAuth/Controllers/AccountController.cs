@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomAuth.Controllers;
@@ -10,6 +11,7 @@ namespace CustomAuth.Controllers;
 public class AccountController : ControllerBase
 {
     [HttpGet("sign-in")]
+    [AllowAnonymous]
     public async Task SignIn()
     {
         var claimsPrincipal = new ClaimsPrincipal();
