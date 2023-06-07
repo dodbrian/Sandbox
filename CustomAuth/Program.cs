@@ -1,3 +1,4 @@
+using CustomAuth.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -22,9 +23,19 @@ builder.Services
                 {
                     context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                     return Task.CompletedTask;
+                },
+                OnRedirectToAccessDenied = context =>
+                {
+                    context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                    return Task.CompletedTask;
                 }
             };
         });
+
+builder.Services.AddAuthorization();
+
+builder.Services.AddSingleton<IAuthorizationHandler, AuthHandler>();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, ExpressionPolicyProvider>();
 
 builder.Services.AddControllers(
     options =>

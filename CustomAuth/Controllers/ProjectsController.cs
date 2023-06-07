@@ -1,11 +1,9 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomAuth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
 public class ProjectsController : ControllerBase
 {
     // GET: api/Projects
