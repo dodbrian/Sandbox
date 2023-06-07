@@ -23,7 +23,7 @@ Accept: application/json
 
 GET https://localhost:7159/api/Labels
 
-### Sing out
+### Sign out
 
 GET https://localhost:7159/api/Account/log-off
 

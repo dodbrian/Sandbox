@@ -2,6 +2,4 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CustomAuth.Identity;
 
-public class AuthRequirement : IAuthorizationRequirement
-{
-}
+public record AuthRequirement(SimplePolicy Policy) : IAuthorizationRequirement;
