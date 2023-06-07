@@ -1,6 +1,13 @@
+### Try to access project without being signed in
+
+GET https://localhost:7159/api/Projects
+Accept: application/json
+
+### Sign in
+
 GET https://localhost:7159/api/Account/sign-in
 
-###
+### Try to access project again
 
 GET https://localhost:7159/api/Projects
 Accept: application/json
@@ -12,6 +19,11 @@ Accept: application/json
 <> 2023-06-06T223113.200.json
 <> 2023-06-06T222853.200.json
 
-###
+### Sing out
 
 GET https://localhost:7159/api/Account/log-off
+
+### Try to access project again after logging out
+
+GET https://localhost:7159/api/Projects
+Accept: application/json
