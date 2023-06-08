@@ -18,7 +18,7 @@ public class AccountController : ControllerBase
         var claims = new List<Claim>
         {
             new(ClaimTypes.Name, "testUser"),
-            new("Policy", "Label:Create"),
+            new("Policy", "Project:Read[Project=$project,Company=$company],Create{WorkItem:Read,Update[Participant=$participant]};*:*;*;Task:*;*:Delete;*[Test=123];*:*[Test=333];Template:Read{*}"),
         };
 
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
