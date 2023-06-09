@@ -36,7 +36,7 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddSingleton<IAuthorizationHandler, AuthHandler>();
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, ExpressionPolicyProvider>();
-builder.Services.AddSingleton<ExpressionPolicyParser>();
+builder.Services.AddSingleton<RegexPolicyParser>();
 
 builder.Services.AddControllers(
     options =>

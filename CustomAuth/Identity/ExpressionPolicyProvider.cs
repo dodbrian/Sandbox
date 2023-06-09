@@ -5,20 +5,20 @@ namespace CustomAuth.Identity;
 
 public class ExpressionPolicyProvider : IAuthorizationPolicyProvider
 {
-    private readonly ExpressionPolicyParser _expressionPolicyParser;
+    private readonly RegexPolicyParser _regexPolicyParser;
     private readonly DefaultAuthorizationPolicyProvider _fallbackPolicyProvider;
 
     public ExpressionPolicyProvider(
         IOptions<AuthorizationOptions> options,
-        ExpressionPolicyParser expressionPolicyParser)
+        RegexPolicyParser regexPolicyParser)
     {
-        _expressionPolicyParser = expressionPolicyParser;
+        _regexPolicyParser = regexPolicyParser;
         _fallbackPolicyProvider = new DefaultAuthorizationPolicyProvider(options);
     }
 
     public Task<AuthorizationPolicy?> GetPolicyAsync(string policyName)
     {
-        if (!_expressionPolicyParser.TryParse(policyName, out var expressionPolicy))
+        if (!_regexPolicyParser.TryParse(policyName, out var expressionPolicy))
             return _fallbackPolicyProvider.GetPolicyAsync(policyName);
 
         var authorizationPolicy = new AuthorizationPolicyBuilder()

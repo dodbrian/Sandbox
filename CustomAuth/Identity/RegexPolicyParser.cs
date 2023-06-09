@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace CustomAuth.Identity;
 
-public class ExpressionPolicyParser
+public class RegexPolicyParser
 {
     private readonly Regex _regex = new(
         @"((?'Resource'[^:{};]+):)?((?'Action'[^:,;\[{}]+)(\[((?'Condition'[^,\]]+?)=(?'Value'[^\]]+?),?)+\])?,?)+(?'Children'{.+?})?(;|)",
