@@ -1,4 +1,5 @@
 using CustomAuth.Identity;
+using CustomAuth.Parsers;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;

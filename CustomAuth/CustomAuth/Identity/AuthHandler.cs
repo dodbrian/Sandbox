@@ -1,3 +1,4 @@
+using CustomAuth.Parsers;
 using Microsoft.AspNetCore.Authorization;
 
 namespace CustomAuth.Identity;
