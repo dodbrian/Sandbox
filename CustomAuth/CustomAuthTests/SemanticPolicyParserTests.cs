@@ -52,7 +52,7 @@ public class SemanticPolicyParserTests
 
         var createOperation = permission.Operations[1];
         createOperation.Name.Should().Be("Create");
-        createOperation.Conditions.Should().HaveCount(0);
+        createOperation.Conditions.Should().BeNullOrEmpty();
         permission.Children.Should().HaveCount(2);
 
         var workItemPermission = permission.Children[0];
@@ -72,7 +72,7 @@ public class SemanticPolicyParserTests
     public void ParsePolicy_ShouldParsePolicyWithSingleOperation()
     {
         // Arrange
-        var text = "Task:Delete;";
+        const string text = "Task:Delete;";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -84,14 +84,14 @@ public class SemanticPolicyParserTests
         permission.Resource.Should().Be("Task");
         permission.Operations.Should().HaveCount(1);
         permission.Operations.First().Name.Should().Be("Delete");
-        permission.Operations.First().Conditions.Should().BeEmpty();
+        permission.Operations.First().Conditions.Should().BeNullOrEmpty();
     }
 
     [Fact]
     public void ParsePolicy_ShouldParsePolicyWithWildcardOperation()
     {
         // Arrange
-        var text = "Task:*;";
+        const string text = "Task:*;";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -103,14 +103,14 @@ public class SemanticPolicyParserTests
         permission.Resource.Should().Be("Task");
         permission.Operations.Should().HaveCount(1);
         permission.Operations.First().Name.Should().Be("*");
-        permission.Operations.First().Conditions.Should().BeEmpty();
+        permission.Operations.First().Conditions.Should().BeNullOrEmpty();
     }
 
     [Fact]
     public void ParsePolicy_ShouldParsePolicyWithWildcardResourceAndOperation()
     {
         // Arrange
-        var text = "*:*;";
+        const string text = "*:*;";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -122,14 +122,14 @@ public class SemanticPolicyParserTests
         permission.Resource.Should().Be("*");
         permission.Operations.Should().HaveCount(1);
         permission.Operations.First().Name.Should().Be("*");
-        permission.Operations.First().Conditions.Should().BeEmpty();
+        permission.Operations.First().Conditions.Should().BeNullOrEmpty();
     }
 
     [Fact]
     public void ParsePolicy_ShouldParsePolicyWithWildcardResource()
     {
         // Arrange
-        var text = "*;";
+        const string text = "*;";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -146,7 +146,7 @@ public class SemanticPolicyParserTests
     public void ParsePolicy_ShouldParsePolicyWithWildcardResourceAndSpecificOperation()
     {
         // Arrange
-        var text = "*:Delete;";
+        const string text = "*:Delete;";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -158,14 +158,14 @@ public class SemanticPolicyParserTests
         permission.Resource.Should().Be("*");
         permission.Operations.Should().HaveCount(1);
         permission.Operations.First().Name.Should().Be("Delete");
-        permission.Operations.First().Conditions.Should().BeEmpty();
+        permission.Operations.First().Conditions.Should().BeNullOrEmpty();
     }
 
     [Fact]
     public void ParsePolicy_ShouldParsePolicyWithWildcardResourceAndOperationAndCondition()
     {
         // Arrange
-        var text = "*:*[Test=333];";
+        const string text = "*:*[Test=333];";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -207,7 +207,7 @@ public class SemanticPolicyParserTests
     public void ParsePolicy_ShouldParseNestedPolicy()
     {
         // Arrange
-        var text = "Label:Create{Color:Update;Font:Scale{Ligatures:Enable[User=$user]}};";
+        const string text = "Label:Create{Color:Update;Font:Scale{Ligatures:Enable[User=$user]}};";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -247,7 +247,7 @@ public class SemanticPolicyParserTests
     public void ParsePolicy_ShouldParsePolicyWithWildcardResourceInNestedPermission()
     {
         // Arrange
-        var text = "Template:Read{*}";
+        const string text = "Template:Read{*}";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -270,7 +270,7 @@ public class SemanticPolicyParserTests
     public void ParsePolicy_ShouldHandleEmptyInput()
     {
         // Arrange
-        var text = "";
+        const string text = "";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -283,7 +283,7 @@ public class SemanticPolicyParserTests
     public void ParsePolicy_ShouldHandleWhitespaceInput()
     {
         // Arrange
-        var text = "     ";
+        const string text = "     ";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -296,7 +296,7 @@ public class SemanticPolicyParserTests
     public void ParsePolicy_ShouldIgnoreTrailingSemicolon()
     {
         // Arrange
-        var text = "Task:Delete;";
+        const string text = "Task:Delete;";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -308,14 +308,14 @@ public class SemanticPolicyParserTests
         permission.Resource.Should().Be("Task");
         permission.Operations.Should().HaveCount(1);
         permission.Operations.First().Name.Should().Be("Delete");
-        permission.Operations.First().Conditions.Should().BeEmpty();
+        permission.Operations.First().Conditions.Should().BeNullOrEmpty();
     }
 
     [Fact]
     public void ParsePolicy_ShouldHandleMultiplePermissions()
     {
         // Arrange
-        var text = "Task:Delete;Task:Create;Task:Update;";
+        const string text = "Task:Delete;Task:Create;Task:Update;";
 
         // Act
         var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
@@ -330,10 +330,10 @@ public class SemanticPolicyParserTests
     public void ParsePolicy_ShouldThrowExceptionOnInvalidInput()
     {
         // Arrange
-        var text = "InvalidPolicy";
+        const string text = "InvalidPolicy";
 
         // Act
-        Action act = () => SemanticPolicyParser.ParsePolicy(text).ToList();
+        Action act = () => SemanticPolicyParser.ParsePolicy(text);
 
         // Assert
         act.Should().Throw<Exception>();

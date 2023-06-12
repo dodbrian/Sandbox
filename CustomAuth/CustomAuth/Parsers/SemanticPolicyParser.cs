@@ -27,7 +27,7 @@ public static class SemanticPolicyParser
         var context = new ParseContext(new Scanner(text));
         var parser = CreatePolicyParser();
 
-        return parser.Parse(context);
+        return parser.Parse(context) ?? Enumerable.Empty<Permission>();
     }
 
     private static Parser<List<Permission>> CreatePolicyParser()
