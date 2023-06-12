@@ -9,8 +9,9 @@
   &lt;Assembly Path="C:\Users\dzimin\.nuget\packages\aspose.tasks\21.9.0\lib\netstandard2.0\Aspose.Tasks.dll" /&gt;
   &lt;Assembly Path="/Users/dzimin/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/6.0.6/lib/net6.0/Microsoft.EntityFrameworkCore.Sqlite.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7c57d923_002D50dd_002D4dc0_002D9c64_002D8b16a4dea14f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SemanticPolicyParserTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c52bb5e4_002Df369_002D455b_002Da27c_002Ddbb33f25bec5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SemanticPolicyParserTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::530F845E-06D4-4D4C-970E-6F41CF8E1049::net6.0::CustomAuthTests.SemanticPolicyParserTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::5539A05E-634D-485B-877B-71BAAACD1C22::net6.0::CustomAuthTests.SemanticPolicyParserTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>
