@@ -9,7 +9,7 @@ public class RegexPolicyParser
         @"((?'Resource'[^:{};]+):)?((?'Action'[^:,;\[{}]+)(\[((?'Condition'[^,\]]+?)=(?'Value'[^\]]+?),?)+\])?,?)+(?'Children'{.+?})?(;|)",
         RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
 
-    public bool TryParse(string policyName, out SimplePolicy expressionPolicy)
+    public bool TryParse(string policyName, out Policy expressionPolicy)
     {
         var matches = _regex.Matches(policyName);
 
@@ -19,9 +19,15 @@ public class RegexPolicyParser
             return false;
         }
 
-        expressionPolicy = new SimplePolicy(
-            Resource: matches[0].Groups["Resource"].Value,
-            Action: matches[0].Groups["Action"].Value);
+        expressionPolicy = new Policy(
+            new[]
+            {
+                new Permission
+                {
+                    Resource = matches[0].Groups["Resource"].Value,
+                    Operations = new List<Operation> { new() { Name = matches[0].Groups["Action"].Value } }
+                }
+            });
 
         return true;
     }

@@ -5,7 +5,7 @@ using static Parlot.Fluent.Parsers;
 
 namespace CustomAuth.Parsers;
 
-public static class SemanticPolicyParser
+public class SemanticPolicyParser
 {
     private static readonly TextSpan AsteriskSpan = new("*");
     private static readonly Parser<TextSpan> Asterisk = Terms.Char('*').Then(static _ => AsteriskSpan);
@@ -22,12 +22,22 @@ public static class SemanticPolicyParser
     private static readonly Parser<TextSpan> Value =
         Identifier.Or(Terms.Integer().Then(num => new TextSpan(num.ToString())));
 
-    public static IEnumerable<Permission> ParsePolicy(string text)
+    public bool TryParse(string policyString, out Policy policy)
     {
-        var context = new ParseContext(new Scanner(text));
+        policy = ParsePolicy(policyString);
+
+        return policy.Permissions.Any();
+    }
+
+    public static Policy ParsePolicy(string policyString)
+    {
+        var context = new ParseContext(new Scanner(policyString));
         var parser = CreatePolicyParser();
 
-        return parser.Parse(context) ?? Enumerable.Empty<Permission>();
+        var permissions = parser.Parse(context) ?? Enumerable.Empty<Permission>();
+        var policy = new Policy(permissions);
+
+        return policy;
     }
 
     private static Parser<List<Permission>> CreatePolicyParser()

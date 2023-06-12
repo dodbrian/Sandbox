@@ -34,7 +34,7 @@ public class SemanticPolicyParserTests
         const string text =
             "Project:Read[Project=$project,Company=$company],Create{WorkItem:Read,Update[Participant=$participant]};";
 
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         permissions.Should().HaveCount(1);
         var permission = permissions.First();
@@ -75,7 +75,7 @@ public class SemanticPolicyParserTests
         const string text = "Task:Delete;";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -94,7 +94,7 @@ public class SemanticPolicyParserTests
         const string text = "Task:*;";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -113,7 +113,7 @@ public class SemanticPolicyParserTests
         const string text = "*:*;";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -132,7 +132,7 @@ public class SemanticPolicyParserTests
         const string text = "*;";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -149,7 +149,7 @@ public class SemanticPolicyParserTests
         const string text = "*:Delete;";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -168,7 +168,7 @@ public class SemanticPolicyParserTests
         const string text = "*:*[Test=333];";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -189,7 +189,7 @@ public class SemanticPolicyParserTests
         const string text = "*[Test=123];";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -210,7 +210,7 @@ public class SemanticPolicyParserTests
         const string text = "Label:Create{Color:Update;Font:Scale{Ligatures:Enable[User=$user]}};";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -250,7 +250,7 @@ public class SemanticPolicyParserTests
         const string text = "Template:Read{*}";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -273,7 +273,7 @@ public class SemanticPolicyParserTests
         const string text = "";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().BeEmpty();
@@ -286,7 +286,7 @@ public class SemanticPolicyParserTests
         const string text = "     ";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().BeEmpty();
@@ -299,7 +299,7 @@ public class SemanticPolicyParserTests
         const string text = "Task:Delete;";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(1);
@@ -318,7 +318,7 @@ public class SemanticPolicyParserTests
         const string text = "Task:Delete;Task:Create;Task:Update;";
 
         // Act
-        var permissions = SemanticPolicyParser.ParsePolicy(text).ToList();
+        var permissions = SemanticPolicyParser.ParsePolicy(text).Permissions;
 
         // Assert
         permissions.Should().HaveCount(3);
