@@ -4,12 +4,12 @@ using Microsoft.Extensions.Options;
 
 namespace CustomAuth.Identity.Providers;
 
-public class ExpressionPolicyProvider : IAuthorizationPolicyProvider
+public class SemanticPolicyProvider : IAuthorizationPolicyProvider
 {
     private readonly SemanticPolicyParser _semanticPolicyParser;
     private readonly DefaultAuthorizationPolicyProvider _fallbackPolicyProvider;
 
-    public ExpressionPolicyProvider(
+    public SemanticPolicyProvider(
         IOptions<AuthorizationOptions> options,
         SemanticPolicyParser semanticPolicyParser)
     {
