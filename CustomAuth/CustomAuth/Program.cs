@@ -1,5 +1,7 @@
 using CustomAuth.Identity;
-using CustomAuth.Parsers;
+using CustomAuth.Identity.Filters;
+using CustomAuth.Identity.Parsers;
+using CustomAuth.Identity.Providers;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -35,9 +37,10 @@ builder.Services
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddSingleton<IAuthorizationHandler, AuthHandler>();
-builder.Services.AddSingleton<IAuthorizationPolicyProvider, ExpressionPolicyProvider>();
+builder.Services.AddSingleton<IAuthorizationHandler, SemanticAuthHandler>();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, SemanticPolicyProvider>();
 builder.Services.AddSingleton<SemanticPolicyParser>();
+builder.Services.AddSingleton<SemanticPolicyEvaluator>();
 
 builder.Services.AddControllers(
     options =>
@@ -47,6 +50,7 @@ builder.Services.AddControllers(
             .Build();
 
         options.Filters.Add(new AuthorizeFilter(policy));
+        options.Filters.Add<SemanticAuthorizationActionFilter>();
     });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
