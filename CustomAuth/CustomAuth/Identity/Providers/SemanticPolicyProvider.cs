@@ -19,11 +19,11 @@ public class SemanticPolicyProvider : IAuthorizationPolicyProvider
 
     public Task<AuthorizationPolicy?> GetPolicyAsync(string policyName)
     {
-        if (!_semanticPolicyParser.TryParse(policyName, out var expressionPolicy))
+        if (!_semanticPolicyParser.TryParse(policyName, out var semanticPolicy))
             return _fallbackPolicyProvider.GetPolicyAsync(policyName);
 
         var authorizationPolicy = new AuthorizationPolicyBuilder()
-            .AddRequirements(new AuthRequirement(expressionPolicy))
+            .AddRequirements(new SemanticAuthRequirement(semanticPolicy))
             .Build();
 
         return Task.FromResult<AuthorizationPolicy?>(authorizationPolicy);
