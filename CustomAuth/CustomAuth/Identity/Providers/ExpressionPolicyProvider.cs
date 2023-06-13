@@ -1,8 +1,8 @@
-using CustomAuth.Parsers;
+using CustomAuth.Identity.Parsers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 
-namespace CustomAuth.Identity;
+namespace CustomAuth.Identity.Providers;
 
 public class ExpressionPolicyProvider : IAuthorizationPolicyProvider
 {

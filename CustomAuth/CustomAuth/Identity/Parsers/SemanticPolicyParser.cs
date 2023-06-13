@@ -1,9 +1,9 @@
-using CustomAuth.Identity;
+using CustomAuth.Identity.PolicyModel;
 using Parlot;
 using Parlot.Fluent;
 using static Parlot.Fluent.Parsers;
 
-namespace CustomAuth.Parsers;
+namespace CustomAuth.Identity.Parsers;
 
 public class SemanticPolicyParser
 {

@@ -1,4 +1,4 @@
-using CustomAuth.Parsers;
+using CustomAuth.Identity.Parsers;
 using FluentAssertions;
 
 namespace CustomAuthTests;

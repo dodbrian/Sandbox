@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
-using CustomAuth.Identity;
+using CustomAuth.Identity.PolicyModel;
 
-namespace CustomAuth.Parsers;
+namespace CustomAuth.Identity.Parsers;
 
 public class RegexPolicyParser
 {
