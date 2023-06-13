@@ -1,3 +1,4 @@
+using CustomAuth.Identity.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomAuth.Controllers;
@@ -14,8 +15,9 @@ public class ProjectsController : ControllerBase
     }
 
     // GET: api/Projects/5
-    [HttpGet("{id}", Name = "Get")]
-    public string Get(int id)
+    [Policy("Project:Read")]
+    [HttpGet("{id:guid}", Name = "Get")]
+    public string Get([Condition("Project")] Guid id)
     {
         return "value";
     }

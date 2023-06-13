@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authorization;
+using CustomAuth.Identity.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomAuth.Controllers;
@@ -8,7 +8,7 @@ namespace CustomAuth.Controllers;
 public class LabelsController : ControllerBase
 {
     [HttpGet]
-    [Authorize("Label:Read")]
+    [Policy("Label:Read")]
     public IEnumerable<string> GetAll()
     {
         var strings = new[] { "red", "blue" };
