@@ -5,7 +5,7 @@ Accept: application/json
 
 ### Sign in
 
-GET https://localhost:7159/api/Account/sign-in
+GET https://localhost:7159/api/Account/sign-in/project-manager
 
 ### Try to access project again
 
@@ -18,6 +18,10 @@ Accept: application/json
 <> 2023-06-06T223202.200.json
 <> 2023-06-06T223113.200.json
 <> 2023-06-06T222853.200.json
+
+### Get specific project
+
+GET https://localhost:7159/api/Projects/9c665be9-9b7c-48b7-97e4-634953980ebf
 
 ### Get labels
 
