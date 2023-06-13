@@ -1,4 +1,4 @@
-namespace CustomAuth.Identity;
+namespace CustomAuth.Identity.PolicyModel;
 
 public class Permission
 {
