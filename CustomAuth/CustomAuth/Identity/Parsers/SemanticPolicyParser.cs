@@ -19,8 +19,10 @@ public class SemanticPolicyParser
     private static readonly Parser<char> SemiColon = Terms.Char(';');
     private static readonly Parser<char> Comma = Terms.Char(',');
 
-    private static readonly Parser<TextSpan> Value =
-        Identifier.Or(Terms.Integer().Then(num => new TextSpan(num.ToString())));
+    private static readonly Parser<TextSpan> Guid =
+        Terms.Pattern(static c => c is >= 'A' and <= 'F' or >= 'a' and <= 'f' or >= '0' and <= '9' or '-');
+
+    private static readonly Parser<TextSpan> Value = Identifier.Or(Guid);
 
     public bool TryParse(string policyString, out Policy policy)
     {
