@@ -49,6 +49,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAuthTests", "CustomAu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoconaTest", "CoconaTest\CoconaTest.csproj", "{B58D73DA-F56A-4DF4-90F5-07E42A8A00F8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{7E63909E-E470-4421-83E3-71C6C98D810C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer", "Kafka\KafkaConsumer\KafkaConsumer.csproj", "{81874091-047B-45EE-BF1B-6E2D716A4BD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaProducer", "Kafka\KafkaProducer\KafkaProducer.csproj", "{5AF3377E-1EBA-4B11-81FD-84DB75351380}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +137,14 @@ Global
 		{B58D73DA-F56A-4DF4-90F5-07E42A8A00F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B58D73DA-F56A-4DF4-90F5-07E42A8A00F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B58D73DA-F56A-4DF4-90F5-07E42A8A00F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81874091-047B-45EE-BF1B-6E2D716A4BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81874091-047B-45EE-BF1B-6E2D716A4BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81874091-047B-45EE-BF1B-6E2D716A4BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81874091-047B-45EE-BF1B-6E2D716A4BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF3377E-1EBA-4B11-81FD-84DB75351380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF3377E-1EBA-4B11-81FD-84DB75351380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF3377E-1EBA-4B11-81FD-84DB75351380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF3377E-1EBA-4B11-81FD-84DB75351380}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,5 +155,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{ABCEDA8F-0E9C-49FB-B22C-6CC10D297069} = {A3DA6A86-83F6-463A-A899-16D740130096}
 		{5539A05E-634D-485B-877B-71BAAACD1C22} = {A3DA6A86-83F6-463A-A899-16D740130096}
+		{81874091-047B-45EE-BF1B-6E2D716A4BD4} = {7E63909E-E470-4421-83E3-71C6C98D810C}
+		{5AF3377E-1EBA-4B11-81FD-84DB75351380} = {7E63909E-E470-4421-83E3-71C6C98D810C}
 	EndGlobalSection
 EndGlobal
