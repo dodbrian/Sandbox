@@ -14,4 +14,6 @@
     &lt;TestId&gt;xUnit::5539A05E-634D-485B-877B-71BAAACD1C22::net6.0::CustomAuthTests.SemanticPolicyParserTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=CoconaTest_002FLocalization_002FStrings/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
 	</wpf:ResourceDictionary>
